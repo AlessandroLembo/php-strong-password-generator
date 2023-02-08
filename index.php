@@ -1,3 +1,15 @@
+<?php
+
+function rand_password() {
+    $password_length = $_GET['password_length'];
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+    return substr(str_shuffle($chars), 0 ,$password_length);
+    
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +34,12 @@
         Nessun parametro
     </div>
     
-    <form action="" method="GET">
-        <div class="row">
-           <label for="password" class="col-5">Lunghezza password</label>
-           <input type="number" min="1" max="16" name="password" class="col-5">
+    <form action="#" method="GET">
+        <div class="d-flex align-items-center justify-content-around">
+           <label for="password">Lunghezza password</label>
+           <input type="number" min="8" max="16" name="password_length">
         </div>   
+        <div>La password generata è: <?= rand_password() ?></div>
         <button>Invia</button>
         
     </form>
