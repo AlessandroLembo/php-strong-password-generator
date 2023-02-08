@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['length-pass'])) {
+    header('Location: functions.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
