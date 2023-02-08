@@ -20,11 +20,11 @@ include 'functions.php';
 
 <body>
     <div class="container bg-dark-subtle vh-100 p-5">
-        <h1 class="text-center pt-5">Strong Password Generator</h1>
+        <h1 class="text-center pt-5 fs-1">Strong Password Generator</h1>
         <h2 class="text-center fs-2">Genera una password sicura</h2>
 
         <div class="alert alert-info my-5" role="alert">
-            <div class="fs-2"><?= rand_password() ?></div>
+            <div class="fs-3"><?= rand_password() ?></div>
         </div>
 
         <form action="" method="GET" class="bg-warning-subtle py-5 px-3 rounded-2">
