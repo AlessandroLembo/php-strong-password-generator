@@ -2,7 +2,6 @@
 
 include 'functions.php';
     
-
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +25,7 @@ include 'functions.php';
      <h2 class="text-center fs-2">Genera una password sicura</h2>
 
     <div class="alert alert-info" role="alert">
-        Nessun parametro
+    <div><?= rand_password() ?></div>
     </div>
     
     <form action="#" method="GET">
@@ -34,7 +33,7 @@ include 'functions.php';
            <label for="password">Lunghezza password</label>
            <input type="number" min="8" max="16" name="password_length">
         </div>   
-        <div>La password generata è: <?= rand_password() ?></div>
+        
         <button>Invia</button>
         
     </form>
