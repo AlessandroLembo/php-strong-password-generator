@@ -28,13 +28,13 @@ include 'functions.php';
     <div><?= rand_password() ?></div>
     </div>
     
-    <form action="#" method="GET">
+    <form action="" method="GET">
         <div class="d-flex align-items-center justify-content-around">
            <label for="password">Lunghezza password</label>
            <input type="number" min="8" max="16" name="password_length">
         </div>   
         
-        <button>Invia</button>
+    <button>Invia</button>
         
     </form>
      
