@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if (isset($_SESSION['length-pass'])) {
     header('Location: functions.php');
@@ -21,7 +22,7 @@ if (isset($_SESSION['length-pass'])) {
 <body>
     <div class="container">
         <div class="alert alert-success my-5 text-center" role="alert">
-            <div class="fs-3">Benvenuto in pagina!</div>
+            <div class="fs-3"><?= $password ?></div>
         </div>
     </div>
 
