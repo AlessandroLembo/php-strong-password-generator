@@ -1,6 +1,6 @@
 <?php
 
-function rand_password($password_length)
+function rand_password($password_length, $allow_duplicates)
 {
 
     $message = '';
@@ -16,7 +16,9 @@ function rand_password($password_length)
 
         $rand_chars = $chars[$rand_index];
 
-        $message .= $rand_chars;
+        if ($allow_duplicates || !$allow_duplicates && !str_contains($message, $rand_chars)) {
+            $message .= $rand_chars;
+        }
     }
 
     session_start();

@@ -3,7 +3,10 @@
 require __DIR__ . '/functions.php';
 
 if (isset($_GET['password_length'])) {
-    $password = rand_password($_GET['password_length']);
+
+    $allow_duplicates = $_GET['allow-dupli'] || false;
+
+    $password = rand_password($_GET['password_length'], $allow_duplicates);
 
     if ($password === true) {
         header('Location: show_password.php');
@@ -49,13 +52,13 @@ if (isset($_GET['password_length'])) {
                 <legend class="col-form-label col-sm-8 pt-0 fs-3">Consenti ripetizioni di uno o più caratteri:</legend>
                 <div class="col-sm-2">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                        <input class="form-check-input" type="radio" name="allow-dupli" id="gridRadios1" checked value="1">
                         <label class="form-check-label" for="gridRadios1">
                             Si
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <input class="form-check-input" type="radio" name="allow-dupli" id="gridRadios2" value="0">
                         <label class="form-check-label" for="gridRadios2">
                             No
                         </label>
