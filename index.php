@@ -1,6 +1,15 @@
 <?php
 
-include 'functions.php';
+require __DIR__ . '/functions.php';
+
+if (isset($_GET['password_length'])) {
+    $password = rand_password($_GET['password_length']);
+
+    if ($password === true) {
+        header('Location: show_password.php');
+    }
+}
+
 
 ?>
 
@@ -24,8 +33,8 @@ include 'functions.php';
         <h2 class="text-center fs-2">Genera una password sicura</h2>
 
         <?php if (isset($password)) : ?>
-            <div class="alert alert-info my-5" role="alert">
-                <div class="fs-3">La password è: <?= $password ?></div>
+            <div class="alert alert-danger my-5" role="alert">
+                <div class="fs-3"><?= $password ?></div>
             </div>
         <?php endif ?>
 

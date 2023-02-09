@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-if (isset($_SESSION['length-pass'])) {
-    header('Location: functions.php');
+if (empty($_SESSION['length-pass'])) {
+    header('Location: index.php');
 }
 ?>
 
@@ -22,7 +22,7 @@ if (isset($_SESSION['length-pass'])) {
 <body>
     <div class="container">
         <div class="alert alert-success my-5 text-center" role="alert">
-            <div class="fs-3"><?= $password ?></div>
+            <div class="fs-3">La password inserita è: <?= $_SESSION['length-pass'] ?></div>
         </div>
     </div>
 
